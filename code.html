@@ -1,0 +1,32 @@
+<!-- Language Interpreter -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Language Interpreter</title>
+    <script>
+      function interpret() 
+      {
+        // Get the input code from the textarea
+        var code = document.getElementById("code").value;
+
+        // Clear the output
+        document.getElementById("output").textContent = "";
+
+        try {
+          // Evaluate the code using eval() function
+          eval(code);
+        } catch (error) 
+        {
+          // Display any error that occurs during evaluation
+          document.getElementById("output").textContent = error.message;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Language Interpreter</h1>
+    <textarea id="code" rows="10" cols="50"></textarea><br>
+    <button onclick="interpret()">Run</button><br>
+    <pre id="output"></pre>
+  </body>
+</html>
